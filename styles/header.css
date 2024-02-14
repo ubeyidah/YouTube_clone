@@ -1,0 +1,168 @@
+.header {
+    height: 56px;
+    padding: 0 16px;
+
+    display: flex;
+    justify-content: space-between;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+
+    background-color: white;
+}
+
+/* reusable class */
+.header-hover:hover{
+    background-color: #dfdfdf;
+}
+.header-btn{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    transition: background-color .3s;
+}
+.tooltip{
+    position: absolute;
+    bottom: -50px;
+    text-wrap: nowrap;
+    background-color: rgb(109, 109, 109);
+    color: white;
+    padding: 8px 6px;
+    border-radius: 5px;
+    opacity: 0;
+    pointer-events: none;
+    font-size: 12px;
+}
+
+/* end */
+
+.left-section {
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+}
+.hamburger-menu{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    transition: background-color .2s;
+}
+.hamburger-menu:hover{
+    background-color: #dfdfdf;
+}
+
+.hamburger-menu img {
+    height: 24px;
+}
+
+.youtube-logo {
+    height: 20px;
+}
+
+.middle-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 732px;
+    padding: 0 7.4%;
+}
+
+.search-bar {
+    flex: 1;
+    height: 40px;
+    padding: 0 4px 0 16px;
+    margin-left: 32px;
+    border-radius: 20px 0 0 20px;
+    border: 1px solid rgb(204, 204, 204);
+    font-size: 17px;
+    outline: none;
+    width: 0;
+}
+.search-bar:focus{
+    border-color: blue;
+}
+
+.search-btn {
+    width: 64px;
+    height: 40px;
+    border: none;
+    background-color: #F8F8F8;
+
+    border-radius: 0 20px 20px 0;
+    border: 1px solid rgb(204, 204, 204);
+    border-left: none;
+
+}
+
+.search-btn img,
+.voice-search-btn img {
+    height: 24px;
+}
+
+.voice-search-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background-color: #F8F8F8;
+    margin-left: 14px;
+}
+
+.right-section {
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-shrink: 0;
+}
+
+.upload img,
+.notification img,
+.search-icon img,
+.voice-search-icon img {
+    height: 24px;
+}
+
+.search-icon,
+.voice-search-icon{
+    display: none;
+}
+
+.profile img {
+    height: 32px;
+    border-radius: 50%;
+}
+
+.search-btn:hover .tooltip,
+.voice-search-btn:hover .tooltip,
+.search-icon:hover .tooltip,
+.voice-search-icon:hover .tooltip,
+.upload:hover .tooltip,
+.notification:hover .tooltip
+{
+    opacity: 1;
+}
+
+@media(max-width: 650px) {
+    .middle-section {
+        display: none;
+    }
+
+    .search-icon,
+    .voice-search-icon {
+        display: flex;
+    }
+    .right-section{
+        width: 225px;
+    }
+}
+
+@media(min-width: 1050px) {
+    .middle-section {
+        padding: 0 2%;
+    }
+}
